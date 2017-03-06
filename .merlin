@@ -1,0 +1,6 @@
+S bin
+S src
+B bin
+B src
+PKG compiler-libs result
+FLG -safe-string -open Result
