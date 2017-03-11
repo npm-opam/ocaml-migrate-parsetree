@@ -1,0 +1,58 @@
+{
+    "name": "ocaml-migrate-parsetree-actual",
+    "exportedEnvVars": {
+        "CAML_LD_LIBRARY_PATH": {
+            "global": true,
+            "resolveAsRelativePath": true,
+            "globalCollisionBehavior": "joinPath",
+            "val": "./_build/ocamlfind/lib/stublibs"
+        },
+        "ocaml_migrate_parsetree_installed": {
+            "global": true,
+            "globalCollisionBehavior": "clobber",
+            "val": "true"
+        },
+        "FINDLIB": {
+            "global": true,
+            "resolveAsRelativePath": true,
+            "globalCollisionBehavior": "joinPath",
+            "val": "./_build/ocamlfind/lib"
+        },
+        "version": {
+            "global": true,
+            "globalCollisionBehavior": "clobber",
+            "val": "0.4.0"
+        },
+        "ocaml_migrate_parsetree_version": {
+            "global": true,
+            "globalCollisionBehavior": "clobber",
+            "val": "0.4.0"
+        },
+        "ocaml_migrate_parsetree_enable": {
+            "global": true,
+            "globalCollisionBehavior": "clobber",
+            "val": "enable"
+        },
+        "PATH": {
+            "global": true,
+            "resolveAsRelativePath": true,
+            "globalCollisionBehavior": "joinPath",
+            "val": "./_build/ocamlfind/bin"
+        }
+    },
+    "version": "0.4.0",
+    "dependencies": {
+        "dependency-env": "*",
+        "substs": "https://github.com/yunxing/substs.git",
+        "@opam-alpha/result": "*",
+        "@opam-alpha/jbuilder": ">= 1.0.0",
+        "nopam": "*",
+        "opam-installer-bin": "https://github.com/yunxing/opam-installer-bin.git"
+    },
+    "scripts": {
+        "postinstall": "eval $(dependencyEnv) && nopam && jbuilder build --only-packages ocaml-migrate-parsetree --root . -j 4 @install && (opam-installer --prefix=$opam_prefix || true)"
+    },
+    "peerDependencies": {
+        "@opam-alpha/ocaml": ">= 4.02.0"
+    }
+}
