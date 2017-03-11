@@ -45,6 +45,7 @@
         "dependency-env": "*",
         "substs": "https://github.com/yunxing/substs.git",
         "@opam-alpha/result": "*",
+        "@opam-alpha/ocamlfind": "*",
         "@opam-alpha/jbuilder": ">= 1.0.0",
         "nopam": "*",
         "opam-installer-bin": "https://github.com/yunxing/opam-installer-bin.git"
